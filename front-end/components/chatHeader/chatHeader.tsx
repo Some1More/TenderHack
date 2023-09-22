@@ -6,11 +6,13 @@ import { X } from 'lucide-react'
 
 export default function ChatHeader(props: HTMLProps<HTMLDivElement>) {
   return (
-    <div className={(props.className ?? '') + ' ' + styles['wrapper']}>
+    <div {...props} className={(props.className ?? '') + ' ' + styles['wrapper']}>
         <div className={styles['flex-container']}>
-            <Image src={GreenEllipse} alt='Online'/>
+            <div className={styles['img-wrapper']}>
+                <Image className={styles['img']} src={GreenEllipse} alt='Online'/> 
+            </div>
             <p className={styles['support-text']}>Поддержка</p>
-            <X size={38} color='red' />
+            <X size={38} color='red'/>
         </div>
     </div>
   )

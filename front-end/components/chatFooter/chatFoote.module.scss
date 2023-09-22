@@ -1,0 +1,22 @@
+.wrapper {
+    min-height: 60px;
+    max-height: 120px;
+
+    display: flex;
+
+    align-items: center;
+
+    border-top: 3px solid red;
+
+    .send-horizontal { 
+        margin: 10px;
+    }
+
+    .paperclip {
+        margin: 10px;
+    }
+
+    .input {
+        height: 100%;
+    }
+}
