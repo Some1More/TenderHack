@@ -11,7 +11,7 @@ export default function ChatHeader(props: HTMLProps<HTMLDivElement>) {
             <div className={styles['img-wrapper']}>
                 <Image className={styles['img']} src={GreenEllipse} alt='Online'/> 
             </div>
-            <p className={styles['support-text']}>Поддержка</p>
+            <div className={styles['support-text']}>Поддержка</div>
             <X size={38} color='red'/>
         </div>
     </div>

@@ -5,12 +5,15 @@ import styles from './chatFoote.module.scss'
 import { TextArea } from '../ui/textArea'
 import { Paperclip, Send } from 'lucide-react'
 
-import { useChatStore } from '@/lib/stores/useChatStore'
+import { useChatStore } from '@/libs/stores/useChatStore'
+import { sendMessageToBot } from '@/libs/api/sendMessageToBot'
 
 export default function ChatFooter(props: HTMLProps<HTMLDivElement>) {
     const [isActive, setIsActive] = useState<boolean>(false);
     const [isHover, setIsHover] = useState<boolean>(false);
     const textRef = useRef<HTMLTextAreaElement>(null);
+
+    const data = useChatStore((state) => state.chatHistory)
 
     const onChangeHandler = () => {
         setIsActive(textRef.current?.value !== '');
@@ -18,15 +21,19 @@ export default function ChatFooter(props: HTMLProps<HTMLDivElement>) {
     const onHoverHandler = () => {
         setIsHover(!isHover);
     }
-    const onClickHandler = () => {
+    const onClickHandler = async () => {
         const inputValue = textRef.current?.value;  
         if (!inputValue) return; 
+        console.log(inputValue)
+        useChatStore.getState().addMessage({ value: inputValue, isBot: false});
         
-        useChatStore.getState().addMessage({ value: inputValue, isBot: false });
-
+        const answer = await sendMessageToBot(inputValue); 
+        if (!answer) return;
+        console.log(answer)
+        useChatStore.getState().addMessage({ value: answer, isBot: true});
+        
         textRef.current.value = '';
     } 
-
     const handleKeyPress = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
         if (event.key === "Enter" && !event.shiftKey) {
           event.preventDefault(); 

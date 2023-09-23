@@ -1,29 +1,34 @@
 'use client'
 
-import _ from 'lodash'
+import _ from 'lodash' 
 
-import React, { HTMLProps } from 'react' 
 import styles from './chatHistory.module.scss'
-import { useChatStore } from '@/lib/stores/useChatStore'
-import { Message } from '@/lib/types'
+import { useChatStore } from '@/libs/stores/useChatStore'
+import { Message } from '@/libs/types'
 import { UserCircle } from 'lucide-react'
+import { useEffect } from 'react'
 
 type ChatHistoryProps = {
     value: Message[]
 } 
 
 export default function ChatHistory(props: ChatHistoryProps) {
+    const generateUniqueId = () => Date.now() + Math.random().toString(36).substr(2, 5);
+    
     const chatHistory = useChatStore((state) => state.chatHistory) 
     const setChatHistory = useChatStore((state) => state.setChatHistory) 
-    chatHistory ? setChatHistory(chatHistory) : setChatHistory([]);
 
-    const omitedProps = _.omit(props, ['message', 'isBot'])
+    useEffect(() => {
+        chatHistory ? setChatHistory(chatHistory) : setChatHistory([]); 
+    }, [chatHistory, setChatHistory])
+
+    const omitedProps = _.omit(props, ['message', 'isBot']) 
 
   return (
     <div {...omitedProps} className={styles['wrapper']}>
         {_.map(chatHistory, (item) => ( 
          item.isBot ? (
-            <div className={styles['bot-message']}>
+            <div key={generateUniqueId()} className={styles['bot-message']}>
                 <div className={styles['bot-container']}>
                     <div className={styles['text-bot']}>{item.value}</div>
                     <div className={styles['txt-block'] + ' ' + styles['bot']}>
@@ -33,7 +38,7 @@ export default function ChatHistory(props: ChatHistoryProps) {
                 </div>
             </div>
          ) : (
-            <div className={styles['client-message']}>
+            <div key={generateUniqueId()} className={styles['client-message']}>
                 <div className={styles['client-container']}>
                     <div className={styles['text-client']}>
                         {item.value}
