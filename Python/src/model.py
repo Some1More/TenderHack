@@ -1,8 +1,10 @@
 import pandas as pd
 from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import LabelEncoder, StandardScaler
+from sklearn.preprocessing import LabelEncoder
 import numpy as np
 import tensorflow as tf
+import pickle
+import joblib
 
 # предобработка ввода, токенизация, преобразование в числовой формат, добавление паддинга и преобразование в форму, которую принимает модель
 def preprocess_input(text, tokenizer, max_len):
@@ -49,22 +51,30 @@ model = tf.keras.Sequential([
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 
 # Обучение модели
-history = model.fit(train_padded, train_labels, epochs=100, validation_data=(test_padded, test_labels))
+#history = model.fit(train_padded, train_labels, epochs=100, validation_data=(test_padded, test_labels))
 
-loss, accuracy = model.evaluate(test_padded, test_labels)  # Оцениваем точность модели на тестовом наборе данных
 
-print()
-print('Test loss:', loss)  # Выводим значение функции потерь на тестовом наборе данных
-print('Test accuracy:', accuracy)  # Выводим точность модели на тестовом наборе данных
-print()
+filename = 'Python/model.zip'
+joblib.dump(model, open(filename, 'wb'))
+
+m = joblib.load('Python/model.zip')
+
+
+
+#loss, accuracy = model.evaluate(test_padded, test_labels)  # Оцениваем точность модели на тестовом наборе данных
+
+#print()
+#print('Test loss:', loss)  # Выводим значение функции потерь на тестовом наборе данных
+#print('Test accuracy:', accuracy)  # Выводим точность модели на тестовом наборе данных
+#print()
 
 # задайте максимальную длину вопроса и используйте ваш токенизатор
-max_len = 38
+#max_len = 38
 
 # Пример использования predict на одном вопросе
-question = "Какой смысл жизни?"
+question = "Какие действия могут привести к блокировке на Портале Поставщиков?"
 processed_question = preprocess_input(question, tokenizer, max_len)
-prediction = model.predict(processed_question)
+prediction = m.predict(processed_question)
 
 # Преобразуйте предсказания из вероятностей в метки классов
 predicted_labels = np.argmax(prediction, axis=1)
@@ -72,7 +82,3 @@ predicted_labels = np.argmax(prediction, axis=1)
 # Преобразуйте обратно предсказанные метки классов в текстовые метки
 predicted_answer = label_encoder.inverse_transform(predicted_labels)[0]
 print(predicted_answer)
-
-# Проверка
-#for question, correct_answer, predicted_answer in zip(test_data['Новая редакция вопроса'], test_data['ОТВЕТ'], predicted_answer):
-    #print(f"Вопрос: {question}\nПравильный ответ: {correct_answer}\nПредсказанный ответ: {predicted_answer}\n")

@@ -3,6 +3,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.vs
+
 # C extensions
 *.so
 
@@ -120,8 +122,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
 .venv
+.env
 env/
 venv/
 ENV/
@@ -195,3 +197,11 @@ Front-end/next-env.d.ts
 Python/docs/База знаний ответов.xlsx
 .gitignore
 Python/docs/Статьи блока знаний.xlsx
+*.bin
+*.v2
+*.vsidx
+*.lock
+*.suo
+*.cs
+*.editorconfig
+*.cache

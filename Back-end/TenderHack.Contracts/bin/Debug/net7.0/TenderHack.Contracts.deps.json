@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "TenderHack.Contracts/1.0.0": {
+        "runtime": {
+          "TenderHack.Contracts.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "TenderHack.Contracts/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

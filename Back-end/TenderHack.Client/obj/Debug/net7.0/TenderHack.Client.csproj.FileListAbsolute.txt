@@ -1,0 +1,12 @@
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\bin\Debug\net7.0\TenderHack.Client.deps.json
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\bin\Debug\net7.0\TenderHack.Client.dll
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\bin\Debug\net7.0\TenderHack.Client.pdb
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\TenderHack.Client.csproj.AssemblyReference.cache
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\TenderHack.Client.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\TenderHack.Client.AssemblyInfoInputs.cache
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\TenderHack.Client.AssemblyInfo.cs
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\TenderHack.Client.csproj.CoreCompileInputs.cache
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\TenderHack.Client.dll
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\refint\TenderHack.Client.dll
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\TenderHack.Client.pdb
+C:\Users\andry\OneDrive\Рабочий стол\Проекты\Хакатоны\TenderHack\Back-end\TenderHack.Client\obj\Debug\net7.0\ref\TenderHack.Client.dll
