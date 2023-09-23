@@ -1,21 +1,40 @@
 ﻿using MediatR;
-using Microsoft.Extensions.ML;
-using TenderHack.Core;
+using TenderHackServer.UseCases.Abstractions;
 
 namespace TenderHackServer.UseCases.GetAnswer;
 
 public class GetAnswerQueryHandler : IRequestHandler<GetAnswerQuery, string>
 {
-    private readonly PredictionEnginePool<string, ModelOutput> _predictionEnginePool;
+    private readonly IMachineLearningRepository _mlRepository;
 
-    public GetAnswerQueryHandler(PredictionEnginePool<string, ModelOutput> predictionEnginePool)
+    private readonly IMessageRepository _messageRepository;
+
+    public GetAnswerQueryHandler(IMachineLearningRepository mlRepository, IMessageRepository messageRepository)
     {
-        _predictionEnginePool = predictionEnginePool;
+        _mlRepository = mlRepository;
+        _messageRepository = messageRepository;
     }
 
     public async Task<string> Handle(GetAnswerQuery request, CancellationToken cancellationToken)
     {
-        var result = _predictionEnginePool.Predict(modelName: "SentimentAnalysisModel", request.Question);
-        return result.Answers.First();
+        await _messageRepository.CreateMessage(new TenderHack.Core.Message()
+        {
+            CreationDate = DateTime.Now,
+            UserId = 0,
+            Value = request.Question,
+            IsBot = false
+        });
+
+        var answer = await _mlRepository.GetAnswer(request.Question);
+
+        await _messageRepository.CreateMessage(new TenderHack.Core.Message()
+        {
+            CreationDate = DateTime.Now,
+            UserId = 0,
+            Value = answer,
+            IsBot = true
+        });
+
+        return answer;
     }
 }

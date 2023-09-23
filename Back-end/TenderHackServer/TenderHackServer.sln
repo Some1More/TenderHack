@@ -3,11 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33801.468
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenderHackServer", "TenderHackServer.csproj", "{1E68D005-5CD7-4803-BCA6-BCDEE54B922F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenderHackServer", "TenderHackServer.csproj", "{1E68D005-5CD7-4803-BCA6-BCDEE54B922F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenderHackServer.UseCases", "..\TenderHackServer.UseCases\TenderHackServer.UseCases.csproj", "{281F6BD0-026B-4686-8401-F957C39C66F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenderHackServer.UseCases", "..\TenderHackServer.UseCases\TenderHackServer.UseCases.csproj", "{281F6BD0-026B-4686-8401-F957C39C66F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenderHack.Core", "..\TenderHack.Core\TenderHack.Core.csproj", "{70256AF2-945C-4723-9261-20C6409F3F91}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TenderHack.DataAccess", "..\TenderHack.DataAccess\TenderHack.DataAccess.csproj", "{184342E0-67B6-46D6-AD64-B3D9DFF4DE09}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenderHack.Client", "..\TenderHack.Client\TenderHack.Client.csproj", "{94924873-33C3-42B1-BB6D-5EBFC6CB44D1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenderHack.Core", "..\TenderHack.Core\TenderHack.Core.csproj", "{63795979-C844-45BA-AD98-C3DB0F5F2291}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TenderHack.Contracts", "..\TenderHack.Contracts\TenderHack.Contracts.csproj", "{B2A915FE-AA58-4E1A-BCA3-77F4EDF32172}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +29,22 @@ Global
 		{281F6BD0-026B-4686-8401-F957C39C66F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{281F6BD0-026B-4686-8401-F957C39C66F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{281F6BD0-026B-4686-8401-F957C39C66F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{70256AF2-945C-4723-9261-20C6409F3F91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{70256AF2-945C-4723-9261-20C6409F3F91}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{70256AF2-945C-4723-9261-20C6409F3F91}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{70256AF2-945C-4723-9261-20C6409F3F91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184342E0-67B6-46D6-AD64-B3D9DFF4DE09}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184342E0-67B6-46D6-AD64-B3D9DFF4DE09}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184342E0-67B6-46D6-AD64-B3D9DFF4DE09}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184342E0-67B6-46D6-AD64-B3D9DFF4DE09}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94924873-33C3-42B1-BB6D-5EBFC6CB44D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94924873-33C3-42B1-BB6D-5EBFC6CB44D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94924873-33C3-42B1-BB6D-5EBFC6CB44D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94924873-33C3-42B1-BB6D-5EBFC6CB44D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63795979-C844-45BA-AD98-C3DB0F5F2291}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63795979-C844-45BA-AD98-C3DB0F5F2291}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63795979-C844-45BA-AD98-C3DB0F5F2291}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63795979-C844-45BA-AD98-C3DB0F5F2291}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2A915FE-AA58-4E1A-BCA3-77F4EDF32172}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2A915FE-AA58-4E1A-BCA3-77F4EDF32172}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2A915FE-AA58-4E1A-BCA3-77F4EDF32172}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2A915FE-AA58-4E1A-BCA3-77F4EDF32172}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

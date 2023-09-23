@@ -10,11 +10,13 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.7" />
-    <PackageReference Include="Microsoft.Extensions.ML" Version="3.0.0-preview.23266.6" />
+    <PackageReference Include="Refit.HttpClientFactory" Version="7.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TenderHack.Client\TenderHack.Client.csproj" />
+    <ProjectReference Include="..\TenderHack.DataAccess\TenderHack.DataAccess.csproj" />
     <ProjectReference Include="..\TenderHackServer.UseCases\TenderHackServer.UseCases.csproj" />
   </ItemGroup>
 

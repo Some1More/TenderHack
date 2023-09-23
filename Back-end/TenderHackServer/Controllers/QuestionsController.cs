@@ -4,7 +4,7 @@ using TenderHackServer.UseCases.GetAnswer;
 
 namespace TenderHackServer.Controllers;
 
-[Route("api/[controller]")]
+[Route("api/question")]
 [ApiController]
 public class QuestionsController : ControllerBase
 {

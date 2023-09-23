@@ -1,7 +1,10 @@
-using Microsoft.Extensions.ML;
 using System.Reflection;
-using TenderHack.Core;
+using TenderHack.Client;
+using TenderHackServer.UseCases.Abstractions;
 using TenderHackServer.UseCases.GetAnswer;
+using Refit;
+using TenderHack.DataAccess.Repositories;
+using TenderHack.DataAccess;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +14,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+builder.Services.AddDbContext<Context>();
+
 builder.Services.AddSwaggerGen(options =>
 {
     var basePath = AppContext.BaseDirectory;
@@ -19,10 +24,13 @@ builder.Services.AddSwaggerGen(options =>
     options.IncludeXmlComments(xmlPath);
 });
 
-builder.Services.AddPredictionEnginePool<string, ModelOutput>()
-    .FromFile(modelName: "SentimentAnalysisModel", filePath: "sentiment_model.zip", watchForChanges: true);
-
 builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetAnswerQuery).Assembly));
+builder.Services.AddScoped<IMachineLearningRepository, MachineLearningRepository>();
+builder.Services.AddScoped<IMessageRepository, MessageRepository>();
+
+// refit клиент
+builder.Services.AddRefitClient<IMLModelClient>()
+    .ConfigureHttpClient(c => c.BaseAddress = new Uri($"http://127.0.0.1:8000"));
 
 var app = builder.Build();
 
