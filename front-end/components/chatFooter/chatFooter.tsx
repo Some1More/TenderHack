@@ -24,13 +24,13 @@ export default function ChatFooter(props: HTMLProps<HTMLDivElement>) {
     const onClickHandler = async () => {
         const inputValue = textRef.current?.value;  
         if (!inputValue) return; 
-        console.log(inputValue)
+
         useChatStore.getState().addMessage({ value: inputValue, isBot: false});
         
         const answer = await sendMessageToBot(inputValue); 
         if (!answer) return;
-        console.log(answer)
-        useChatStore.getState().addMessage({ value: answer, isBot: true});
+
+        useChatStore.getState().addMessage(answer);
         
         textRef.current.value = '';
     } 
