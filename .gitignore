@@ -202,3 +202,6 @@ Python/docs/Статьи блока знаний.xlsx
 *.vsidx
 *.lock
 *.suo
+*.cs
+*.editorconfig
+*.cache
