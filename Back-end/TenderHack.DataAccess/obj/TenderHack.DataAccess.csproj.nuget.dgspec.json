@@ -1,0 +1,348 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.DataAccess\\TenderHack.DataAccess.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Client\\TenderHack.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Client\\TenderHack.Client.csproj",
+        "projectName": "TenderHack.Client",
+        "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Client\\TenderHack.Client.csproj",
+        "packagesPath": "C:\\Users\\andry\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5555/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Refit": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Contracts\\TenderHack.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Contracts\\TenderHack.Contracts.csproj",
+        "projectName": "TenderHack.Contracts",
+        "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Contracts\\TenderHack.Contracts.csproj",
+        "packagesPath": "C:\\Users\\andry\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5555/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Core\\TenderHack.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Core\\TenderHack.Core.csproj",
+        "projectName": "TenderHack.Core",
+        "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Core\\TenderHack.Core.csproj",
+        "packagesPath": "C:\\Users\\andry\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5555/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.DataAccess\\TenderHack.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.DataAccess\\TenderHack.DataAccess.csproj",
+        "projectName": "TenderHack.DataAccess",
+        "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.DataAccess\\TenderHack.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\andry\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5555/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Client\\TenderHack.Client.csproj": {
+                "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Client\\TenderHack.Client.csproj"
+              },
+              "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHackServer.UseCases\\TenderHackServer.UseCases.csproj": {
+                "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHackServer.UseCases\\TenderHackServer.UseCases.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[7.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHackServer.UseCases\\TenderHackServer.UseCases.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHackServer.UseCases\\TenderHackServer.UseCases.csproj",
+        "projectName": "TenderHackServer.UseCases",
+        "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHackServer.UseCases\\TenderHackServer.UseCases.csproj",
+        "packagesPath": "C:\\Users\\andry\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHackServer.UseCases\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\andry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5555/v3/index.json": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Contracts\\TenderHack.Contracts.csproj": {
+                "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Contracts\\TenderHack.Contracts.csproj"
+              },
+              "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Core\\TenderHack.Core.csproj": {
+                "projectPath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Core\\TenderHack.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "MediatR": {
+              "target": "Package",
+              "version": "[12.1.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
