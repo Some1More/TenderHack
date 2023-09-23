@@ -3,7 +3,7 @@ using TenderHack.Contracts;
 
 namespace TenderHackServer.UseCases.GetMessages;
 
-public class GetMessagesQuery : IRequest<List<Message>>
+public class GetMessagesQuery : IStreamRequest<Message>
 {
     public int UserId { get; }
 

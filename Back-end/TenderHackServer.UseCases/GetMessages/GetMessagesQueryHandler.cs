@@ -6,7 +6,7 @@ using TenderHackServer.UseCases.Cfg;
 
 namespace TenderHackServer.UseCases.GetMessages;
 
-public class GetMessagesQueryHandler : IRequestHandler<GetMessagesQuery, List<Message>>
+public class GetMessagesQueryHandler : IStreamRequestHandler<GetMessagesQuery, Message>
 {
     private readonly IMessageRepository _messageRepository;
 
@@ -18,9 +18,13 @@ public class GetMessagesQueryHandler : IRequestHandler<GetMessagesQuery, List<Me
         _mapper = MappingProfile.GetMapper();
     }
 
-    public async Task<List<Message>> Handle(GetMessagesQuery request, CancellationToken cancellationToken)
+    public async IAsyncEnumerable<Message> Handle(GetMessagesQuery request, CancellationToken cancellationToken)
     {
-        var result = await _messageRepository.GetMessagesByUserId(request.UserId);
-        return _mapper.Map<List<Message>>(result);
+        var result = _messageRepository.GetMessagesByUserId(request.UserId);
+        
+        foreach(var message in _mapper.Map<List<Message>>(result))
+        {
+            yield return message;
+        }
     }
 }

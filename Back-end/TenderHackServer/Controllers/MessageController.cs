@@ -16,9 +16,9 @@ public class MessageController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetMessages()
+    public IActionResult GetMessages()
     {
-        var result = await _mediator.Send(new GetMessagesQuery(userId: 0));
+        var result = _mediator.CreateStream(new GetMessagesQuery(userId: 0));
         return Ok(result);
     }
 }

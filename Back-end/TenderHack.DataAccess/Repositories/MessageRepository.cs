@@ -13,9 +13,9 @@ public class MessageRepository : IMessageRepository
         _context = context;
     }
 
-    public async Task<List<Message>> GetMessagesByUserId(int userId)
+    public IAsyncEnumerable<Message> GetMessagesByUserId(int userId)
     {
-        return await _context.Messages.Where(message => message.UserId == userId).ToListAsync();
+        return _context.Messages.Where(message => message.UserId == userId).AsAsyncEnumerable();
     }
 
     public async Task CreateMessage(Message message)
