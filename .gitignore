@@ -195,3 +195,8 @@ Front-end/next-env.d.ts
 Python/docs/База знаний ответов.xlsx
 .gitignore
 Python/docs/Статьи блока знаний.xlsx
+*.bin
+*.v2
+*.vsidx
+*.lock
+*.suo
