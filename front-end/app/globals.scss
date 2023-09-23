@@ -87,3 +87,26 @@ body {
 
   background-color: #000000e7;
 }
+
+textarea { 
+  min-height: 30px;
+  height: 50px;
+  max-height: 120px;
+  padding: 10px 0px;
+
+  resize: none; 
+}
+
+::-webkit-scrollbar { 
+  padding: 10px 0;
+  background-color: #EBEBEB;
+
+  cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px; 
+  background-color: red; 
+  border: 2px solid transparent; 
+  background-clip: padding-box;
+}

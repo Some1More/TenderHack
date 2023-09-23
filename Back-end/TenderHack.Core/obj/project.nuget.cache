@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "oI71Vjojt8Hsl7OZ5bMHdp763+h0XdQ4EMMnbBmxIy/7jjYlmAAF2XEF5dx7X0+X+VPEIet56jKgaD+d5a4IMg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.Core\\TenderHack.Core.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Вы выполняете операцию ''restore'' с источником ''HTTP'', ''http://localhost:5555/v3/index.json''. Доступ без HTTPS будет удален в будущей версии. Рассмотрите возможность перехода на источник ''HTTPS''."
+    }
+  ]
+}

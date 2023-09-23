@@ -1,5 +1,79 @@
-.wrapper {
+.wrapper { 
+    display: flex;
+    flex-direction: column;
+  
     height: 100%;
-
+    padding: 10px;
+  
     flex-grow: 1;
+    overflow-y: auto;
+  
+    @mixin Message { 
+        display: flex; 
+        flex-direction: column;
+
+        font-size: 20px ;
+
+        text-wrap: wrap; 
+        padding: 5px 10px; 
+    } 
+  
+    .bot-message {
+      @include Message();
+
+      align-items: flex-start; 
+    }
+  
+    .client-message {
+      @include Message();
+
+      align-items: flex-end;
+    }
+  } 
+
+  @mixin Container { 
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  @mixin Text {
+    max-width: 350px;  
+    overflow-wrap: break-word; 
+    padding: 10px; 
+    border-radius: 10px 10px 0 10px; 
+  }
+
+  .bot-container { 
+    @include Container(); 
+
+
+    .text-bot {
+        @include Text(); 
+        border: 1px solid red; 
+    }
+  }
+
+  .client-container { 
+    @include Container(); 
+
+    .text-client {
+        @include Text(); 
+        background-color: #EBEBEB; 
+    } 
 }
+
+  .txt-block {
+    display: flex;
+    width: 100%;
+    gap: 5px;
+    justify-content: flex-end;
+    
+    &.bot {
+        justify-content: flex-start;
+    }
+
+    .text {
+        color: rgb(170, 170, 170);
+    }
+  }
