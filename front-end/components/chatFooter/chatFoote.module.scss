@@ -1,5 +1,5 @@
 .wrapper {
-    min-height: 60px;
+    min-height: 65px;
     max-height: 120px;
 
     display: flex;
@@ -28,8 +28,8 @@
         cursor: pointer;
     }
 
-    .input {
-        height: 100%; 
+    .text-area { 
+        overflow-wrap: break-word;
         user-select: none;
-    }
+    } 
 }
