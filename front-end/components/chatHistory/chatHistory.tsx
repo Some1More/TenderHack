@@ -3,16 +3,22 @@
 import _ from 'lodash' 
 
 import styles from './chatHistory.module.scss'
-import { useChatStore } from '@/libs/stores/useChatStore'
-import { Message } from '@/libs/types'
+import { useChatStore } from '@/libs/stores/useChatStore' 
 import { UserCircle } from 'lucide-react'
-import { useEffect } from 'react'
+import { HTMLProps, useEffect, useRef } from 'react'
+import { animateScroll } from 'react-scroll';
+import parseTimestamp from '@/libs/parseTimestamp' 
 
-type ChatHistoryProps = {
-    value: Message[]
-} 
+const scrollToBottom = () => {
+    animateScroll.scrollToBottom({
+        containerId: "chatContainer",
+        duration: 1000
+    });
+}
 
-export default function ChatHistory(props: ChatHistoryProps) {
+export default function ChatHistory(props: HTMLProps<HTMLDivElement>) {
+    const scrollRef = useRef<HTMLDivElement>(null)
+
     const generateUniqueId = () => Date.now() + Math.random().toString(36).substr(2, 5);
     
     const chatHistory = useChatStore((state) => state.chatHistory) 
@@ -20,12 +26,11 @@ export default function ChatHistory(props: ChatHistoryProps) {
 
     useEffect(() => {
         chatHistory ? setChatHistory(chatHistory) : setChatHistory([]); 
-    }, [chatHistory, setChatHistory])
-
-    const omitedProps = _.omit(props, ['message', 'isBot']) 
+        scrollToBottom(); 
+    }, [chatHistory, setChatHistory]) 
 
   return (
-    <div {...omitedProps} className={styles['wrapper']}>
+    <div id='chatContainer' {...props} className={styles['wrapper']} ref={scrollRef}>
         {_.map(chatHistory, (item) => ( 
          item.isBot ? (
             <div key={generateUniqueId()} className={styles['bot-message']}>
@@ -33,7 +38,8 @@ export default function ChatHistory(props: ChatHistoryProps) {
                     <div className={styles['text-bot']}>{item.value}</div>
                     <div className={styles['txt-block'] + ' ' + styles['bot']}>
                         <UserCircle size={28} color="red" />
-                        <p className={styles['text']}>Поддержка</p>
+                        <div className={styles['text']}>Бот,</div>
+                        <div className={styles['text']}>{parseTimestamp(item.creationDate)}</div>
                     </div>
                 </div>
             </div>
@@ -44,7 +50,8 @@ export default function ChatHistory(props: ChatHistoryProps) {
                         {item.value}
                     </div> 
                     <div className={styles['txt-block']}>
-                        <div className={styles['text']}>Вы</div>
+                        <div className={styles['text']}>Вы,</div>
+                        <div className={styles['text']}>{parseTimestamp(item.creationDate)}</div>
                     </div>
                 </div>
             </div>

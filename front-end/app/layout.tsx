@@ -1,3 +1,6 @@
+'use client'
+
+import QueryClientApp from '@/components/providers/queryClient'
 import './globals.scss'
 import type { Metadata } from 'next'
 import { Open_Sans } from 'next/font/google'
@@ -16,7 +19,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={font.className}>{children}</body>
+      <body className={font.className}>
+          <QueryClientApp>
+            {children} 
+          </QueryClientApp>
+        </body>
     </html>
   )
 }
