@@ -1,22 +1,26 @@
-import './globals.scss'
-import type { Metadata } from 'next'
+'use client'
+
+import './globals.scss' 
+import QueryClientApp from '@/components/providers/queryClient'
 import { Open_Sans } from 'next/font/google'
 
-const font = Open_Sans({ subsets: ['latin'] })
-
-export const metadata: Metadata = {
-  title: 'Chat Bot | TenderHack',
-  description: 'Chat Bot :)',
-}
+const font = Open_Sans({ subsets: ['latin'] }) 
 
 export default function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  return (
+  return ( 
     <html lang="ru">
-      <body className={font.className}>{children}</body>
+      <head>
+        <title>TenderHack | ChatBot</title>
+      </head>
+      <body className={font.className}>
+          <QueryClientApp>
+            {children} 
+          </QueryClientApp>
+        </body>
     </html>
   )
 }

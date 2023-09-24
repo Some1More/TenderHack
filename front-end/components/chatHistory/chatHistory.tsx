@@ -1,55 +1,72 @@
 'use client'
 
+import { HTMLProps, useEffect, useRef } from 'react'
+import { animateScroll } from 'react-scroll'
 import _ from 'lodash' 
+import { UserCircle } from 'lucide-react'
 
 import styles from './chatHistory.module.scss'
 import { useChatStore } from '@/libs/stores/useChatStore'
-import { Message } from '@/libs/types'
-import { UserCircle } from 'lucide-react'
-import { useEffect } from 'react'
+import parseTimestamp from '@/libs/parseTimestamp'
 
-type ChatHistoryProps = {
-    value: Message[]
-} 
+const scrollToBottom = () => {
+    animateScroll.scrollToBottom({
+        containerId: "chatContainer",
+        duration: 1000
+    })
+}
 
-export default function ChatHistory(props: ChatHistoryProps) {
-    const generateUniqueId = () => Date.now() + Math.random().toString(36).substr(2, 5);
-    
-    const chatHistory = useChatStore((state) => state.chatHistory) 
-    const setChatHistory = useChatStore((state) => state.setChatHistory) 
+interface ChatItem {
+    isBot: boolean,
+    value: string,
+    creationDate: string,
+}
 
-    useEffect(() => {
-        chatHistory ? setChatHistory(chatHistory) : setChatHistory([]); 
-    }, [chatHistory, setChatHistory])
-
-    const omitedProps = _.omit(props, ['message', 'isBot']) 
-
-  return (
-    <div {...omitedProps} className={styles['wrapper']}>
-        {_.map(chatHistory, (item) => ( 
-         item.isBot ? (
+function Message({ item }: { item: ChatItem }) {
+    const generateUniqueId = () => Date.now() + Math.random().toString(36).substr(2, 5)
+    if (item.isBot) {
+        return (
             <div key={generateUniqueId()} className={styles['bot-message']}>
                 <div className={styles['bot-container']}>
                     <div className={styles['text-bot']}>{item.value}</div>
-                    <div className={styles['txt-block'] + ' ' + styles['bot']}>
+                    <div className={`${styles['txt-block']} ${styles['bot']}`}>
                         <UserCircle size={28} color="red" />
-                        <p className={styles['text']}>Поддержка</p>
+                        <div className={styles['text']}>Бот,</div>
+                        <div className={styles['text']}>{parseTimestamp(item.creationDate)}</div>
                     </div>
                 </div>
             </div>
-         ) : (
-            <div key={generateUniqueId()} className={styles['client-message']}>
-                <div className={styles['client-container']}>
-                    <div className={styles['text-client']}>
-                        {item.value}
-                    </div> 
-                    <div className={styles['txt-block']}>
-                        <div className={styles['text']}>Вы</div>
-                    </div>
+        )
+    }
+    return (
+        <div key={generateUniqueId()} className={styles['client-message']}>
+            <div className={styles['client-container']}>
+                <div className={styles['text-client']}>
+                    {item.value}
+                </div> 
+                <div className={styles['txt-block']}>
+                    <div className={styles['text']}>Вы,</div>
+                    <div className={styles['text']}>{parseTimestamp(item.creationDate)}</div>
                 </div>
             </div>
-         )
+        </div>
+    )
+}
+
+export default function ChatHistory(props: HTMLProps<HTMLDivElement>) {
+    const scrollRef = useRef<HTMLDivElement>(null)
+
+    const chatHistory = useChatStore((state) => state.chatHistory) 
+
+    useEffect(() => {
+        scrollToBottom(); 
+    }, [chatHistory]) 
+
+  return (
+    <div id='chatContainer' {...props} className={styles['wrapper']} ref={scrollRef}>
+        {_.map(chatHistory, (item: ChatItem) => ( 
+           <Message key={item.creationDate} item={item} />
         ))}
-    </div>
+    </div>  
   )
-}   
+}

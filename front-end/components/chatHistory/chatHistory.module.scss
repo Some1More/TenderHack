@@ -41,7 +41,7 @@
     max-width: 350px;  
     overflow-wrap: break-word; 
     padding: 10px; 
-    border-radius: 10px 10px 0 10px; 
+
   }
 
   .bot-container { 
@@ -50,6 +50,7 @@
 
     .text-bot {
         @include Text(); 
+        border-radius: 10px 10px 10px 0px;
         border: 1px solid red; 
     }
   }
@@ -59,6 +60,7 @@
 
     .text-client {
         @include Text(); 
+        border-radius: 10px 10px 0 10px;
         background-color: #EBEBEB; 
     } 
 }
