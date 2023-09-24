@@ -33,6 +33,7 @@ export default function ChatFooter(props: HTMLProps<HTMLDivElement>) {
       useChatStore.getState().addMessage(answer);
 
       textRef.current.value = '';
+      setIsActive(textRef.current?.value !== '');
     };  
 
     const handleKeyPress = (
@@ -40,7 +41,7 @@ export default function ChatFooter(props: HTMLProps<HTMLDivElement>) {
     ) => {
       if (event.key === 'Enter' && !event.shiftKey) {
         event.preventDefault();
-        onClickHandler();
+        onClickHandler(); 
       }
     };
 

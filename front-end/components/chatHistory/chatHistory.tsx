@@ -57,18 +57,16 @@ export default function ChatHistory(props: HTMLProps<HTMLDivElement>) {
     const scrollRef = useRef<HTMLDivElement>(null)
 
     const chatHistory = useChatStore((state) => state.chatHistory) 
-    const setChatHistory = useChatStore((state) => state.setChatHistory) 
 
     useEffect(() => {
-        chatHistory ? setChatHistory(chatHistory) : setChatHistory([]); 
         scrollToBottom(); 
-    }, [chatHistory, setChatHistory]) 
+    }, [chatHistory]) 
 
   return (
     <div id='chatContainer' {...props} className={styles['wrapper']} ref={scrollRef}>
         {_.map(chatHistory, (item: ChatItem) => ( 
            <Message key={item.creationDate} item={item} />
         ))}
-    </div>
+    </div>  
   )
 }

@@ -13,6 +13,9 @@ export default function RootLayout({
 }) {
   return ( 
     <html lang="ru">
+      <head>
+        <title>TenderHack | ChatBot</title>
+      </head>
       <body className={font.className}>
           <QueryClientApp>
             {children} 
