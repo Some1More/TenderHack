@@ -85,5 +85,3 @@ def predict(text):
       text_vector = vectorizer.transform([processed_text]).toarray()[0]
       answer = clf.predict([text_vector])[0]
       return answer
-
-print(predict('Как участвовать в котировочной сессии?'))
