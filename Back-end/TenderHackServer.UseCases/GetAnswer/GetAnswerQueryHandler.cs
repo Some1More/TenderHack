@@ -16,7 +16,8 @@ public class GetAnswerQueryHandler : IRequestHandler<GetAnswerQuery, Message>
 
     private readonly List<string> _greetingMessages = new()
     {
-        "Привет", "Здравствуйте", "Добрый день", "Доброе утро", "Добрый вечер", "Доброго времени суток", "Здарова"
+        "Привет", "Здравствуйте", "Добрый день", "Доброе утро",
+        "Добрый вечер", "Доброго времени суток", "Здарова", "Hi", "Hello"
     };
 
     public GetAnswerQueryHandler(IMachineLearningRepository mlRepository, IMessageRepository messageRepository)
@@ -37,6 +38,12 @@ public class GetAnswerQueryHandler : IRequestHandler<GetAnswerQuery, Message>
         });
 
         var answer = await _mlRepository.GetAnswer(request.Question);
+
+        if (answer.Contains("Поставщику доступен раздел \"Мои оферты\"")
+            && !request.Question.ToLower().Contains("оферты"))
+        {
+            answer = "К сожалению, мне не удалось дать ответ. Пожалуйста, уточнить вопрос.";
+        }
 
         foreach (var greeting in _greetingMessages)
         {
