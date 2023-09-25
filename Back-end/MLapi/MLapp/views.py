@@ -11,8 +11,8 @@ import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer
 
-dataset_path = "C:\\Users\\sabir\\Desktop\\TenderHack\\Back-end\\TenderHack.MLmodel\\dataset.xlsx"
-model_path = "C:\\Users\\sabir\\Desktop\\TenderHack\\Back-end\\TenderHack.MLmodel\\model.pickle"
+dataset_path = "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.MLmodel\\dataset.xlsx"
+model_path = "C:\\Users\\andry\\OneDrive\\Рабочий стол\\Проекты\\Хакатоны\\TenderHack\\Back-end\\TenderHack.MLmodel\\model.pickle"
 morph = pymorphy3.MorphAnalyzer()
 
 def __my_tokenize(text: str) -> str:
